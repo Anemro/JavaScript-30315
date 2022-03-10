@@ -1,0 +1,81 @@
+.flex__cv{
+    background: #2f3542;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+
+    img{
+        max-width: 480px;
+        width: 100%;
+    }
+}
+
+.form-box {
+    width: 480px;
+    padding: 40px;
+    background: #2F3542;
+    text-align: center;
+}
+
+.form-title {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.form-box input[type="text"], .form-box input[type="password"], .form-box button[type="submit"], .form-box input[type="email"], .form-box input[type="number"],.coment textarea{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3742fa;
+    padding: 14px 10px;
+    width: 300px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.coment textarea{
+    width: 360px !important;
+}
+
+.form-box input[type="text"]:focus, .form-box input[type="password"]:focus, .form-box input[type="email"]:focus, .form-box input[type="number"]:focus{
+    width: 350px;
+    border-color: #ffffff;
+}
+
+.form-box button[type="submit"] {
+    border: 0;
+    background: #5352ed;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3742fa;
+    padding: 14px 40px;
+    outline: none;    
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.form-box button[type="submit"]:hover {
+    background: none;
+}
+.fa {
+    width: 1px;
+    border-radius: solid 2px;
+    color: #fff;
+    
+
+}
+@media screen and (min-width: 768px){
+    .flex__cv{
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+}
