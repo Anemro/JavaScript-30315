@@ -23,35 +23,46 @@
                 <div>
                     <div>
                         <p>Cantidad Inicial</p>
-                        <input  id="capitalInicial" type="number"  placeholder="PASO 1">
+                        <input id="capitalInicial"  type="number"  placeholder="PASO 1">
+                        <select name="monedas" id="desplegable">
+                          <li>$</li>
+                          <li>US$</li>
+                          <li>€</li>
+                          <li>£</li>                            
+                        </select>
+                      </div>
                     </div>
-                    <ul>
-                      <li>$</li>
-                      <li>US$</li>
-                      <li>€</li>
-                      <li>£</li>
-                    </ul>
+                    <div>
+                      <p>Interes devengado</p>
+                      <input id="interes"  type="number" placeholder="PASO 2" required>
+                      <p>%</p>
+                    </div>
+                    <div>
+                      <p>Frecuencia de pago</p>
+                      <input id="frecuencia" type="number" placeholder="PASO 3">
+                    </div>
+                    <div>
+                      <p>Numero de años</p>
+                      <input id="anual" type="number" placeholder="PASO 3">
+                    </div>
+                    <div class="form-box">
+                      <button id="boton">Calcular</button>
+                    </div>
                 </div>
-                <div>
-                  <p>Interes devengado</p>
-                  <input type="number" placeholder="PASO 2" required>
-                  <span>%</span>
+                <div id="resultado">
+                  <p></p>
+                  <li>resultado 1</li>
+                  <li>resultado 2</li>
+                  <li></li>
                 </div>
-                <div>
-                  <p>Numero de años</p>
-                  <input type="number" placeholder="PASO 3">
-                </div>
-            </div>
+              </fieldset>
+            </form>
+        </div>
+                       
+                      
                 
-            <div class="coment">
-              <label for="comentario"COMENTARIOS></label>
-              <textarea name="comentario" rows="8" placeholder="Resultado"></textarea>    
-            </div>
             
-          </fieldset>
               
-        </form>
-    </div>
 
 <script src="./calculadora.js"></script>
 </body>

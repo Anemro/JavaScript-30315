@@ -1,16 +1,23 @@
 console.log('Incorporando Arrays para Interes Compuesto');
-//definisión de nueva receta
-class interesCompuesto {
-    constructor(capitalI,interes,frecuencia,anual,capitalFinal) {
-
-        this.capitalI = capitalI;
+//definisión de array valores para el calculo
+function interesCompuesto(capitalI,interes,frecuencia,anual,capitalFinal) {
+    this.capitalI = capitalI;
         this.interes = interes;
         this.frecuencia = frecuencia;
         this.anual = anual;
-        this.capitalFinal = capitalFinal;
-
-    }
+        this.capitalFinal = capitalFinal;    
 }
+// class interesCompuesto {
+//    constructor(capitalI,interes,frecuencia,anual,capitalFinal) {
+//
+//        this.capitalI = capitalI;
+//       this.interes = interes;
+//        this.frecuencia = frecuencia;
+//        this.anual = anual;
+//        this.capitalFinal = capitalFinal;
+        
+//    }
+//}
 //interes con aportes aún en estudio de implementación
 class interesCompuestoAportes {
     constructor(capitalI,aportacion,frAporte,interes,fr,anual,capitalFinal) {
@@ -22,7 +29,7 @@ class interesCompuestoAportes {
         this.fr = fr;
         this.anual = anual;
         this.capitalFinal = capitalFinal;
-
+        
     }
 }
 //Definimos las constantes de calculos
@@ -33,40 +40,37 @@ const calcInteres =(b,e)=> Math.pow(b,e)//donde b es la base y e el exponente re
 let calculoInteresCompuesto = [];
 //let CompuestoAportes para una futura implementación
 let calculoInteresCompuestoAportes = [];
-/* while (true) {
+const boton = document.getElementById('boton')
+
+boton.addEventListener ('click', () => {
+
+    capital = document.getElementById('capitalInicial');
+    interes0 = document.getElementById('interes');
+    frecuencia0 = document.getElementById('frecuencia');
+    anual0 = document.getElementById('anual');
+    capitalInicial= capital.value
+    interes= interes0.value
+    frecuencia= frecuencia0.value
+    anual= anual0.value
+    capitalFinal = producto(capitalInicial,calcInteres(basePotencia(interes),producto(frecuencia,anual)));
+    calculoInteresCompuesto.push (new interesCompuesto (capitalInicial,interes,anual,frecuencia,capitalFinal));
+    console.log(capitalFinal);
+    console.log(calculoInteresCompuesto);
+    console.log(document.getElementById('capitalInicial').value);
+    alert(capitalFinal);
+})
+
+/* const table = document.getElementById ('resultado')
+
+calculoInteresCompuesto.forEach( (parametros) => { 
     
-    let capitalInicial = document.getElementById ('capitalInicial')
-    console.log(capitalInicial);
-    if (isNaN(capitalInicial)) {
-        alert('este valor no es valido');
-        break;
-    }
-    let interes = parseInt(prompt('Ingrese interes mensual'));
-    if (isNaN(interes)) {
-        alert('este valor no es valido');
-        break;
-    }
-    let frecuencia = parseInt(prompt('ingrese cantidad de meses que recibira interes'));
-    if (isNaN(frecuencia)) {
-        alert('este valor no es valido');
-        break;
-    }
+    const resultado = document.createElement('p')
+    resultado.innerText = calculoInteresCompuesto[0].capitalI
+    resultado.innerText = calculoInteresCompuesto[0].interes
+    resultado.innerText = calculoInteresCompuesto[0].anual
+    resultado.innerText = calculoInteresCompuesto[0].frecuencia
+    resultado.innerText = calculoInteresCompuesto[0].capitalFinal
     
-    let anual = parseInt(prompt('ingrese cantidad de años que dura la inversión'));
-    if (isNaN(anual)) {
-        alert('este valor no es valido');
-        break;
-    }
-    else {
-        let capitalFinal = producto(capitalInicial,calcInteres(basePotencia(interes),producto(frecuencia,anual)));
-        calculoInteresCompuesto.push (new interesCompuesto (capitalInicial,interes,anual,frecuencia,capitalFinal));
-        console.log(capitalFinal);
-        console.log(calculoInteresCompuesto);
-        alert(capitalFinal);
-        break
-    }
-}
-const resultado = calculoInteresCompuesto.find (element => element < 1000); 
-console.log(resultado); */
-let capitalInicial = document.getElementById ('capitalInicial')
-console.log(capitalInicial);
+
+    coment.append(resultado)
+}) */

@@ -26,7 +26,6 @@
 
 .form-box {
   width: 480px;
-  padding: 40px;
   background: #2F3542;
   text-align: center;
 }
@@ -61,7 +60,7 @@
   border-color: #ffffff;
 }
 
-.form-box button[type="submit"] {
+.form-box button{
   border: 0;
   background: #5352ed;
   display: block;
@@ -74,10 +73,17 @@
   -webkit-transition: 0.25s;
   transition: 0.25s;
   cursor: pointer;
+  color: #fff;
 }
 
 .form-box button[type="submit"]:hover {
   background: none;
+}
+
+.fa {
+  width: 1px;
+  border-radius: solid 2px;
+  color: #fff;
 }
 
 @media screen and (min-width: 768px) {
@@ -89,4 +95,3 @@
             justify-content: space-evenly;
   }
 }
-/*# sourceMappingURL=style.css.map */
