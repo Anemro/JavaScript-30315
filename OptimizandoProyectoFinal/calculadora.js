@@ -4,6 +4,12 @@ console.log('Incorporando Arrays para Interes Compuesto');
 const producto = (a,b) => a * b //donde a es el capital inicial e b el resultado de los interes
 const basePotencia = (r)=> 1 + (r/100) //donde r es el interes mensual
 const calcInteres =(b,e)=> Math.pow(b,e)//donde b es la base y e el exponente resultante del producto frecuencia y anual
+
+const person = document.getElementsByClassName ('name')
+const usuario = person[0].value
+localStorage.setItem('nombre',`Este es tu resultado ${usuario}`)
+
+
 //creamos la variable para arrays
 let calculoInteresCompuesto = [];
 //let CompuestoAportes para una futura implementación

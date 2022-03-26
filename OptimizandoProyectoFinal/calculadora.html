@@ -13,14 +13,21 @@
 </head>
 
 <body><!-- Comienzo del encabezado -->
-    
+
+  <div>
+    <h1>Bienvenido a facilito</h1>
+  </div>
 
     <div class="flex__cv">
         <form action="#"method="get" enctype="tex/plain" class="form-box animated fadeInUp">
           <fieldset>
-            <h1 class="form-title">CALCULADORA DE INTERES COMPUESTO</h1>
+            <h2 class="form-title">CALCULADORA DE INTERES COMPUESTO</h2>
             <div class="input__date">
                 <div>
+                  <div>
+                    <p>Bienvenido!!! Queremos conocerte</p>
+                    <input class="name" type="string" placeholder="INGRESA TU NOMBRE">
+                  </div>
                     <div>
                         <p>Cantidad Inicial</p>
                         <input id="capitalInicial"  type="number"  placeholder="PASO 1">
@@ -43,7 +50,7 @@
                     </div>
                     <div>
                       <p>Numero de años</p>
-                      <input id="anual" type="number" placeholder="PASO 3">
+                      <input id="anual" type="number" placeholder="PASO 4">
                     </div>
                     <div class="form-box">
                       <button id="boton">Calcular</button>
@@ -71,18 +78,14 @@
               </div>
               <tbody></tbody>
               <div>
-                <tfoot class="foot__total" >
-                  <tr>
-                    <div id="resultado">
-                      
-  
-                    </div>
-                  </tr>
-                </tfoot>
+                <div>
+                  <canvas id="resultado"></canvas>
+            
+                </div>
               </div>
             </div>
           </div>
-  <footer>
+          <footer>
     <div>
       derechos reservados 2022
     </div>
@@ -93,7 +96,9 @@
             
               
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 <script src="./calculadora.js"></script>
 <script src="./constructores.js"></script>
+<script type="text/javascript" src="./grafica.js"></script>
 </body>
 </html>
