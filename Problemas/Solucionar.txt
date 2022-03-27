@@ -1,0 +1,4 @@
+1 - El localStorage no guarda la captura del DOM "name" hasta que no actualiza la página 2 veces.
+2 - Me sucede lo mismo con la captura de los valor para formar el gráfico
+3 - Lo curioso es que los array los crea y los datos se generan, es el paso de interactuar con el DOM el que
+estaría fallando y no logro detectar donde esta el error.
