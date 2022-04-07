@@ -14,9 +14,11 @@ let calculoInteresCompuestoAportes = [];
 const boton = document.getElementById('boton');
 
 
-boton.addEventListener ('click', (CapturaDatos) => {
+
+boton.addEventListener ('click', (evento) => {
     
-    
+    evento.preventDefault()
+
     capital = document.getElementById('capitalInicial');
     interes0 = document.getElementById('interes');
     frecuencia0 = document.getElementById('frecuencia');
@@ -25,36 +27,38 @@ boton.addEventListener ('click', (CapturaDatos) => {
     interes= interes0.value
     frecuencia= frecuencia0.value
     anual= anual0.value
+    
+    
     result = producto(capitalInicial,calcInteres(basePotencia(interes),producto(frecuencia,anual)));
     capitalFinal = result.toFixed(2)
     diferencia = parseInt(capitalFinal - capitalInicial)
     calculoInteresCompuesto.push (new interesCompuesto (capitalInicial,interes,anual,frecuencia,capitalFinal,diferencia));
+   
+   const table = document.getElementById ('result')
+   calculoInteresCompuesto.forEach( () => { 
        
-    const table = document.getElementById ('result')
-    calculoInteresCompuesto.forEach( (parametros) => { 
-        
-        const capitalInicial = document.createElement('td')
-        const interes0 = document.createElement('td')
-        const anual0 = document.createElement('td')
-        const frecuencia0 = document.createElement('td')
-        const capitalFinal = document.createElement('td')
-        const diferencia = document.createElement('td')
-        capitalInicial.innerHTML = calculoInteresCompuesto[0].capitalI
-        interes0.innerHTML = calculoInteresCompuesto[0].interes
-        anual0.innerHTML = calculoInteresCompuesto[0].anual
-        frecuencia0.innerHTML = calculoInteresCompuesto[0].frecuencia
-        diferencia.innerHTML = calculoInteresCompuesto[0].ganancia
-        capitalFinal.innerHTML = calculoInteresCompuesto[0].capitalFinal
-        
-        
-        table.appendChild (anual0)
-        table.appendChild (capitalInicial)
-        table.appendChild (interes0)
-        table.appendChild (frecuencia0)
-        table.appendChild (diferencia)
-        table.appendChild (capitalFinal)
+       const capitalInicial = document.createElement('td')
+       const interes0 = document.createElement('td')
+       const anual0 = document.createElement('td')
+       const frecuencia0 = document.createElement('td')
+       const capitalFinal = document.createElement('td')
+       const diferencia = document.createElement('td')
+       capitalInicial.innerHTML = calculoInteresCompuesto[0].capitalI
+       interes0.innerHTML = calculoInteresCompuesto[0].interes
+       anual0.innerHTML = calculoInteresCompuesto[0].anual
+       frecuencia0.innerHTML = calculoInteresCompuesto[0].frecuencia
+       diferencia.innerHTML = calculoInteresCompuesto[0].ganancia
+       capitalFinal.innerHTML = calculoInteresCompuesto[0].capitalFinal
+       
+       
+       table.appendChild (anual0)
+       table.appendChild (capitalInicial)
+       table.appendChild (interes0)
+       table.appendChild (frecuencia0)
+       table.appendChild (diferencia)
+       table.appendChild (capitalFinal)
+       
     })
-    
     const person = document.getElementsByClassName ('name');
     const usuario = person[0].value
     localStorage.setItem('nombre',`Este es tu resultado ${usuario}`);
