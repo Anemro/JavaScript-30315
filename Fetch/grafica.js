@@ -1,5 +1,6 @@
 const ctx = document.getElementById('resultado').getContext('2d');
 
+setTimeout (()=>{
     boton.addEventListener ('click', () => {
         const myChart = new Chart(ctx, {
             type: 'bar',
@@ -35,6 +36,7 @@ const ctx = document.getElementById('resultado').getContext('2d');
             }
         }
     });
+    }, 1000)
 
 
 
