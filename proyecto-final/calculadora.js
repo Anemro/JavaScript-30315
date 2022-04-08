@@ -61,6 +61,7 @@ boton.addEventListener ('click', (evento) => {
     })
     const person = document.getElementsByClassName ('name');
     const usuario = person[0].value
-    localStorage.setItem('nombre',`Este es tu resultado ${usuario}`);
+    localStorage.setItem('nombre',`Este es tu resultado ${usuario}`)
+    graficar();
 })
 
