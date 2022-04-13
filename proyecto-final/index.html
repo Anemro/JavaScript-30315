@@ -80,8 +80,12 @@
             <input id="frecuencia" type="number" placeholder="PASO 3">
           </div>
           <div>
+            <p>Aporte regular</p>
+            <input class="regular" type="number" placeholder="PASO 4">
+          </div>
+          <div>
             <p>Numero de años</p>
-            <input id="anual" type="number" placeholder="PASO 4">
+            <input id="anual" type="number" placeholder="PASO 5">
           </div>
           <div class="form-box">
             <button id="boton" type="submit">Calcular</button>
@@ -93,8 +97,10 @@
       <div class="table__information">
         <div class="table__information">
           <table class="table">
+             <div class="headCanvas">
+             </div>
             <thead class="headers fa">
-              <tr>
+              
                 <td>Año</td>
                 <td>Balance Inicial</td>
                 <td>Intereses</td>
@@ -103,24 +109,24 @@
                 <td>Interés devengado</td>
                 <td>Interés Acumulado</td>
                 <td>Balance Final</td>
-              </tr>                     
-            </thead>
-                <tr id="result" class="col-6 fa">
-                  
-                </tr>
               
+                                   
+            </thead>
+            <tfoot id="result" class="fa">
+              
+            </tfoot>              
           </table>
         </div>
         <div class="container">
           <div class="row">
-            <div  class="headCanvas">
-              <div class="headCanvas">
-                <canvas id="resultado"></canvas>            
-              </div>              
+            <div>
+              <canvas id="resultado"></canvas>            
             </div>
         </div>
       </div>
     </div>
+            
+                       
 
     <div class="checkBoxDollar">
       <label><input type="checkbox" id="cbox1" value="first_checkbox"> Convierte a dolar</label>

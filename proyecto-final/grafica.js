@@ -1,7 +1,8 @@
 const ctx = document.getElementById('resultado').getContext('2d');
 
-function graficar (arrayGraficado) {
-    const myChart = new Chart(ctx, {
+function graficar () {
+   
+    const myChart = new Chart(ctx, {    
         type: 'bar',
         data: {
             labels: ['Inicio', 'Ganancia','Final'],
@@ -34,21 +35,17 @@ function graficar (arrayGraficado) {
             }
         }
     }
-    });    
+    });
+    
 }
-
-   
-
-
 
 let canvas = document.getElementsByClassName ('headCanvas');
 
 setTimeout (()=> {
     for (i=0; i<localStorage.length; i++){
-    
-        const h4 = document.createElement('div');
+        const h4 = document.createElement('h4');
         const headCanvas = localStorage.getItem(localStorage.key(0));
         h4.innerHTML = headCanvas
         canvas[0].appendChild (h4);
         }
-    }, 5000)
+    }, 2000)

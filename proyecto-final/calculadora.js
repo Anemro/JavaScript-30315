@@ -7,17 +7,30 @@ const calcInteres =(b,e)=> Math.pow(b,e)//donde b es la base y e el exponente re
 
 
 
-//creamos la variable para arrays
+
 let calculoInteresCompuesto = [];
-//let CompuestoAportes para una futura implementación
-let calculoInteresCompuestoAportes = [];
 const boton = document.getElementById('boton');
+const sumaAporte= document.getElementsByClassName("regular")
+const aporte= sumaAporte[0].value
+
+function resetResult() {
+    calculoInteresCompuesto.length = 0;
+    let element = document.getElementById("result");
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }
+};
 
 
 
 boton.addEventListener ('click', (evento) => {
     
     evento.preventDefault()
+    if(calculoInteresCompuesto.length > 0){
+        resetResult()
+    }
+
+    if (aporte == "") {       
 
     capital = document.getElementById('capitalInicial');
     interes0 = document.getElementById('interes');
@@ -59,11 +72,16 @@ boton.addEventListener ('click', (evento) => {
        table.appendChild (capitalFinal)
        
     })
-    const person = document.getElementsByClassName ('name');
-    const usuario = person[0].value
-    localStorage.setItem('nombre',`Este es tu resultado ${usuario}`)
     if (calculoInteresCompuesto[0].capital = true) {
         graficar();
     }
+} else {
+    console.log("false")
+} 
+    
+    
+const person = document.getElementsByClassName ('name');
+const usuario = person[0].value
+localStorage.setItem('nombre',`Este es tu resultado ${usuario}`)
 })
 
