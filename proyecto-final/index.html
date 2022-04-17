@@ -6,93 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Interes Compuesto</title>
     <link rel="stylesheet" href="./css/style.css">
-                <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 
 <body><!-- Comienzo del encabezado -->
 
-  <div>
-    <h1>Bienvenido a facilito</h1>
-  </div>
-  <div class="convert">
-    <div class="q">
-      <h4>Cantidad</h4>
-      <input type="number">
-    </div>
-    <div class="divisa">
-      <select name="moneda" id="divisas">
-        <p>MXN - Peso Mexicano</p>
-        <p>ARS - Peso Argentino</p>
-        <p>USD - Dolar USA</p>
-        <p>Euro</p>
-      </select>
-    </div>
-    <button type="submit">=><=</button>
-    <div class="divisa">
-      <select name="moneda" id="divisas">
-        <p>MXN - Peso Mexicano</p>
-        <p>ARS - Peso Argentino</p>
-        <p>USD - Dolar USA</p>
-        <p>Euro</p>
-      </select>
-    </div>
-    <div class="divisa">
-      <h4>Resultado</h4>
-      <input type="number">
-    </div>
-  </div>
   <div class="flex__cv">
+    <div class="form-title">
+      <h2>Bienvenido a facilito</h2>
+    </div>
+    <div>
+      <h3 class="form-title">Calculadora de interes compuesto</h3>
+    </div>
     <form action="#"method="get" enctype="tex/plain" class="form-box animated fadeInUp">
       <fieldset>
-        <h2 class="form-title">CALCULADORA DE INTERES COMPUESTO</h2>
         <div class="input__date">
           <div>
-            <div>
-              <p>Bienvenido!!! Queremos conocerte</p>
-              <input class="name" type="string" placeholder="INGRESA TU NOMBRE">
-            </div>
-            <div>
-              <p>Cantidad Inicial</p>
-              <div>
-                <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 019 6.25c0 .177-.04.264-.077.318a.956.956 0 01-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 00-.313.195 2.416 2.416 0 00-.692.661.75.75 0 001.248.832.956.956 0 01.276-.245 6.3 6.3 0 01.26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 008 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 101.342.67z"></path></svg>
-                <p class="infoQuestion">Cantidad de dinero con el que planea iniciar su inversión</p></i>
-              </div>
-              <input id="capitalInicial"  type="number"  placeholder="PASO 1">
-              <select name="monedas" id="desplegable">
-                <li>$</li>
-                <li>US$</li>
-                <li>€</li>
-                <li>£</li>                            
-              </select>
-            </div>
+            <p>¿Cuál es tu nombre?</p>
+            <input class="name" type="text" placeholder="INGRESA TU NOMBRE">
           </div>
-          <div>
+          <div class="titleInput">
+            <p>Cantidad Inicial</p>
+            <div class="icon">
+              <a class="alert" href="#">
+                <img  src="./icons/Question.png" alt="inversión">
+                <div class="box">
+                  <p class="infoQuestion">Cantidad de dinero con el que planea iniciar su inversión</p>
+                </div>
+              </a>
+            </div>
+              
+
+          </div>
+          <div class="input">
+            <input  type="number" id="capitalInicial" placeholder="PASO 1">
+          </div>        
+          <div class="titleInput">
             <p>Interes devengado</p>
-            <i class="fa fa-question-circle m-l-xs" data-toggle="tooltip" title="" data-original-title="Cantidad de dinero con el que quieras invertir"></i>
-            <input id="interes"  type="number" placeholder="PASO 2" required>
-            <p>%</p>
+            <div class="icon">
+              <a class="alert" href="#">
+                <img  src="./icons/Question.png" alt="inversión">
+                <div class="box">
+                  <p class="infoQuestion">Cantidad de dinero con el que planea iniciar su inversión</p>
+                </div>
+              </a>
+            </div>
           </div>
           <div>
-            <p>Frecuencia de pago</p>
-            <input id="frecuencia" type="number" placeholder="PASO 3">
+            <input id="interes"  type="number" placeholder="PASO 2">
+          </div>
+          <div class="titleInput">
+            <p>Frecuencia de Pago</p>
+            <div class="icon">
+              <a class="alert" href="#">
+                <img  src="./icons/Question.png" alt="inversión">
+                <div class="box">
+                  <p class="infoQuestion">Cantidad de dinero con el que planea iniciar su inversión</p>
+                </div>
+              </a>
+            </div>
           </div>
           <div>
+            <input id="frecuencia" type="number"  placeholder="PASO 3">
+          </div>
+          <div class="titleInput">
             <p>Aporte regular</p>
-            <input class="regular" type="number" placeholder="PASO 4">
+            <div class="icon">
+              <a class="alert" href="#">
+                <img  src="./icons/Question.png" alt="inversión">
+                <div class="box">
+                  <p class="infoQuestion">Cantidad de dinero con el que planea iniciar su inversión</p>
+                </div>
+              </a>
+            </div>
           </div>
           <div>
+            <input id="regular" type="number" placeholder="PASO OPCIONAL">
+          </div>
+          <div class="titleInput">
             <p>Numero de años</p>
-            <input id="anual" type="number" placeholder="PASO 5">
+            <div class="icon">
+              <a class="alert" href="#">
+                <img  src="./icons/Question.png" alt="inversión">
+                <div class="box">
+                  <p class="infoQuestion">Cantidad de dinero con el que planea iniciar su inversión</p>
+                </div>
+              </a>
+            </div>
+          </div>  
+          <div>            
+            <input id="anual" type="number" placeholder="PASO 4">
           </div>
           <div class="form-box">
-            <button id="boton" type="submit">Calcular</button>
+            <button id="boton-calcular"  type="submit">Calcular</button>            
           </div>
         </div>
       </fieldset>
     </form>
+          
     
       <div class="table__information">
         <div class="table__information">
@@ -100,23 +112,23 @@
              <div class="headCanvas">
              </div>
             <thead class="headers fa">
+              <td>Año</td>
+              <td>Balance Inicial</td>
+              <td>aportaciones</td>
+              <td>Aportes acumulados</td>
+              <td>Interes</td>
+              <td>Interés Acumulado</td>
+              <td>Balance Final</td>
               
-                <td>Año</td>
-                <td>Balance Inicial</td>
-                <td>Intereses</td>
-                <!-- <td>Aportes anuales</td>
-                <td>Aportes acumulados</td> -->
-                <td>Interés devengado</td>
-                <td>Interés Acumulado</td>
-                <td>Balance Final</td>
-              
-                                   
             </thead>
             <tfoot id="result" class="fa">
-              
             </tfoot>              
           </table>
         </div>
+              
+              
+                                   
+              
         <div class="container">
           <div class="row">
             <div>
@@ -125,22 +137,63 @@
         </div>
       </div>
     </div>
-            
+    <div class="convert">
+      <div class="q">
+        <h4>Cantidad</h4>
+        <input id="cantidadOrigen" type="number">
+      </div>
+      <div class="divisa">
+        <select name="moneda" id="divisaOrigen">
+          <!-- <option>ada</option> -->
+          <option>ars</option>
+          <!-- <option>bch</option> -->
+          <!-- <option>btc</option> -->
+          <option>clp</option>
+          <!-- <option>dai</option> -->
+          <!-- <option>eth</option> -->
+          <!-- <option>ltc</option> -->
+          <option>mxn</option>
+          <option>pen</option>
+          <!-- <option>sol</option> -->
+          <option>usd</option>
+          <!-- <option>usdc</option> -->
+          <!-- <option>xlm</option> -->
+          <!-- <option>xrp</option> -->
+        </select>
+      </div>
+      <button id="botonCambio" type="submit">Cambiar a</button>
+      <div class="divisa">
+        <select name="moneda" id="divisaDestino">
+          <option>ada</option>
+          <option>ars</option>
+          <option>bch</option>
+          <option>btc</option>
+          <option>clp</option>
+          <option>dai</option>
+          <option>eth</option>
+          <option>ltc</option>
+          <option>mxn</option>
+          <option>pen</option>
+          <option>sol</option>
+          <option>usd</option>
+          <option>usdc</option>
+          <option>xlm</option>
+          <option>xrp</option>
+        </select>
+      </div>
+      <div>
+        <button id="limpiarTabla">Limpiar Tabla</button>
+      </div>
+      <div id="cantidadDestino">
+       
+      </div>
+
+    </div>
+      
+      
                        
 
-    <div class="checkBoxDollar">
-      <label><input type="checkbox" id="cbox1" value="first_checkbox"> Convierte a dolar</label>
-    </div>
-    <div class="checkBoxBTC">
-      <label><input type="checkbox" id="cbox2" value="second_checkbox"> Convierte a cripto</label>
-    </div>
-    <div>
-      <li class="mep">
-  
-      </li>
-  
-    </div>
-  </div>
+    
   
   <footer>
     <div>
@@ -156,6 +209,7 @@
             
               
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="text/javascript" src="./constructores.js"></script>
   <script type="text/javascript" src="./API.js"></script>
   <script type="text/javascript" src="./calculadora.js"></script>

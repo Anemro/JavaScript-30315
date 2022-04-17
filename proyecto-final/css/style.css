@@ -1,3 +1,54 @@
+body{
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+.titleInput {
+  display: flex;
+  justify-content:center;
+  gap: 10px;
+}
+.alert{
+  text-decoration: none;
+  color: #fff;  
+}
+.alert .box{
+  background-color: black;
+  opacity: 0.7;
+  display: none;
+}
+.alert:hover{
+  display: block;
+
+}
+.icon .alert img{
+  display: inline-block;
+  max-width: 16px;
+  max-height: 20px
+}
+p {
+  margin-top: 1rem;
+  margin-bottom: 0px;
+}
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.table {
+  border: solid 1px white;
+  max-width: 380px;
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+}
+
 .flex__cv {
   background: #2f3542;
   display: -webkit-box;
@@ -22,6 +73,7 @@
 .flex__cv img {
   max-width: 480px;
   width: 100%;
+  margin-top: 1.25rem;
 }
 
 .form-box {
@@ -32,14 +84,20 @@
 
 .form-title {
   text-transform: uppercase;
-  font-weight: 500;
+  text-align: center;
 }
 
-.form-box input[type="text"], .form-box input[type="password"], .form-box button[type="submit"], .form-box input[type="email"], .form-box input[type="number"], .coment textarea {
+input[type="number"]
+{
+-webkit-appearance: textfield !important;
+margin: 0;
+-moz-appearance:textfield !important;
+}
+.form-box input, .form-box input, .form-box #boton-calcular, .form-box input, .form-box input {
   border: 0;
   background: none;
   display: block;
-  margin: 20px auto;
+  margin: auto;
   text-align: center;
   border: 2px solid #3742fa;
   padding: 14px 10px;
@@ -51,16 +109,12 @@
   transition: 0.25s;
 }
 
-.coment textarea {
-  width: 360px !important;
-}
-
-.form-box input[type="text"]:focus, .form-box input[type="password"]:focus, .form-box input[type="email"]:focus, .form-box input[type="number"]:focus {
+.form-box input[type="text"]:focus, .form-box input[type="number"]:focus {
   width: 350px;
   border-color: #ffffff;
 }
 
-.form-box button{
+.form-box #boton-calcular{
   border: 0;
   background: #5352ed;
   display: block;
@@ -76,7 +130,7 @@
   color: #fff;
 }
 
-.form-box button[type="submit"]:hover {
+.form-box #boton-calcular[type="submit"]:hover {
   background: none;
 }
 
@@ -93,12 +147,5 @@
   padding: 1px;
 }
 
-@media screen and (min-width: 768px) {
-  .flex__cv {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-}
+
+

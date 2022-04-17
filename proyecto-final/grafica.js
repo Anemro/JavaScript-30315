@@ -1,13 +1,14 @@
 const ctx = document.getElementById('resultado').getContext('2d');
 
 function graficar () {
-   
+    
     const myChart = new Chart(ctx, {    
+        
         type: 'bar',
         data: {
             labels: ['Inicio', 'Ganancia','Final'],
             datasets: [{
-                label: 'Resultado',
+                label: 'Ganancia',
                 data: [calculoInteresCompuesto[0].capitalI,calculoInteresCompuesto[0].ganancia, calculoInteresCompuesto[0].capitalFinal],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -36,8 +37,8 @@ function graficar () {
         }
     }
     });
-    
 }
+
 
 let canvas = document.getElementsByClassName ('headCanvas');
 
