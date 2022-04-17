@@ -51,11 +51,24 @@ botonCambio.addEventListener('click', (evento)=>{
     evento.preventDefault();
     getDolar()
     getCripto(calcularCambio); 
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Calculo Realizado con exito',
+        showConfirmButton: false,
+        timer: 1000
+      })
 })
-
 
 botonLimpiarTabla.addEventListener('click', (evento)=>{
     limpiarTabla();
+    Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'TABLA ELIMINADA',
+        showConfirmButton: false,
+        timer: 1000
+      })
 })
 
 

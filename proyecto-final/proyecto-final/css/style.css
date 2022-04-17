@@ -13,19 +13,23 @@ body{
   justify-content:center;
   gap: 10px;
 }
-.icon{
+.alert{
+  text-decoration: none;
+  color: #fff;  
+}
+.alert .box{
+  background-color: black;
+  opacity: 0.7;
+  display: none;
+}
+.alert:hover{
+  display: block;
+
+}
+.icon .alert img{
   display: inline-block;
   max-width: 16px;
   max-height: 20px
-}
-.icon .alert{
-  display:none;
-}
-.icon .alert:hover{
-  display: inline-block;
-}
-.alert {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
 }
 p {
   margin-top: 1rem;
@@ -89,7 +93,7 @@ input[type="number"]
 margin: 0;
 -moz-appearance:textfield !important;
 }
-.form-box input, .form-box input, .form-box button, .form-box input, .form-box input {
+.form-box input, .form-box input, .form-box #boton-calcular, .form-box input, .form-box input {
   border: 0;
   background: none;
   display: block;
@@ -110,7 +114,7 @@ margin: 0;
   border-color: #ffffff;
 }
 
-.form-box button{
+.form-box #boton-calcular{
   border: 0;
   background: #5352ed;
   display: block;
@@ -126,7 +130,7 @@ margin: 0;
   color: #fff;
 }
 
-.form-box button[type="submit"]:hover {
+.form-box #boton-calcular[type="submit"]:hover {
   background: none;
 }
 
@@ -144,12 +148,4 @@ margin: 0;
 }
 
 
-@media screen and (min-width: 768px) {
-  .flex__cv {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-}
+
