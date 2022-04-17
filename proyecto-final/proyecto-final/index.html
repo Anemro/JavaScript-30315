@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Interes Compuesto</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body><!-- Comienzo del encabezado -->
+
+  <div class="flex__cv">
+    <div class="form-title">
+      <h2>Bienvenido a facilito</h2>
+    </div>
+    <div>
+      <h3 class="form-title">Calculadora de interes compuesto</h3>
+    </div>
+    <form action="#"method="get" enctype="tex/plain" class="form-box animated fadeInUp">
+      <fieldset>
+        <div class="input__date">
+          <div>
+            <p>¿Cuál es tu nombre?</p>
+            <input class="name" type="text" placeholder="INGRESA TU NOMBRE">
+          </div>
+          <div class="titleInput">
+            <p>Cantidad Inicial</p>
+            <div class="icon">
+              <img  src="./icons/Question.png" alt="Ayuda Cantidad inicial para invertir">
+              <div class="alert">
+                <p class="infoQuestion">Cantidad de dinero con el que planea iniciar su inversión</p>
+              </div>
+            </div>
+          </div>
+          <div class="input">
+            <input  type="number" id="capitalInicial" placeholder="PASO 1">
+          </div>        
+          <div class="titleInput">
+            <p>Interes devengado</p>
+            <div class="icon">
+              <img  src="./icons/Question.png" alt="Ayuda Cantidad inicial para invertir">
+              <div class="alert">
+                <p class="infoQuestion">Tasa porcentual que recibirá en el perido de pago</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input id="interes"  type="number" placeholder="PASO 2">
+          </div>
+          <div class="titleInput">
+            <p>Frecuencia de Pago</p>
+            <div class="icon">
+              <img  src="./icons/Question.png" alt="Ayuda Cantidad inicial para invertir">
+              <div class="alert">
+                <p class="infoQuestion">Cantidad de veces que recibirá el interes propuesto</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input id="frecuencia" type="number"  placeholder="PASO 3">
+          </div>
+          <div class="titleInput">
+            <p>Aporte regular</p>
+            <div class="icon">
+              <img  src="./icons/Question.png" alt="Ayuda Cantidad inicial para invertir">
+              <div class="alert">
+                  <p class="infoQuestion">Aporte que incrementará o retirará, en este caso el valor debe ser negativo</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input id="regular" type="number" placeholder="PASO OPCIONAL">
+          </div>
+          <div class="titleInput">
+            <p>Numero de años</p>
+            <div class="icon">
+              <img  src="./icons/Question.png" alt="Ayuda Cantidad inicial para invertir">
+              <div class="alert">
+                <p class="infoQuestion">Cantidad de dinero con el que planea iniciar su inversión</p>
+              </div>
+            </div>
+          </div>  
+          <div>            
+            <input id="anual" type="number" placeholder="PASO 4">
+          </div>
+          <div class="form-box">
+            <button id="boton-calcular"  type="submit">Calcular</button>            
+          </div>
+        </div>
+      </fieldset>
+    </form>
+          
+    
+      <div class="table__information">
+        <div class="table__information">
+          <table class="table">
+             <div class="headCanvas">
+             </div>
+            <thead class="headers fa">
+              <td>Año</td>
+              <td>Balance Inicial</td>
+              <td>aportaciones</td>
+              <td>Aportes acumulados</td>
+              <td>Interes</td>
+              <td>Interés Acumulado</td>
+              <td>Balance Final</td>
+              
+            </thead>
+            <tfoot id="result" class="fa">
+            </tfoot>              
+          </table>
+        </div>
+              
+              
+                                   
+              
+        <div class="container">
+          <div class="row">
+            <div>
+              <canvas id="resultado"></canvas>            
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="convert">
+      <div class="q">
+        <h4>Cantidad</h4>
+        <input id="cantidadOrigen" type="number">
+      </div>
+      <div class="divisa">
+        <select name="moneda" id="divisaOrigen">
+          <!-- <option>ada</option> -->
+          <option>ars</option>
+          <!-- <option>bch</option> -->
+          <!-- <option>btc</option> -->
+          <option>clp</option>
+          <!-- <option>dai</option> -->
+          <!-- <option>eth</option> -->
+          <!-- <option>ltc</option> -->
+          <option>mxn</option>
+          <option>pen</option>
+          <!-- <option>sol</option> -->
+          <option>usd</option>
+          <!-- <option>usdc</option> -->
+          <!-- <option>xlm</option> -->
+          <!-- <option>xrp</option> -->
+        </select>
+      </div>
+      <button id="botonCambio" type="submit">Cambiar a</button>
+      <div class="divisa">
+        <select name="moneda" id="divisaDestino">
+          <option>ada</option>
+          <option>ars</option>
+          <option>bch</option>
+          <option>btc</option>
+          <option>clp</option>
+          <option>dai</option>
+          <option>eth</option>
+          <option>ltc</option>
+          <option>mxn</option>
+          <option>pen</option>
+          <option>sol</option>
+          <option>usd</option>
+          <option>usdc</option>
+          <option>xlm</option>
+          <option>xrp</option>
+        </select>
+      </div>
+      <div>
+        <button id="limpiarTabla">Limpiar Tabla</button>
+      </div>
+      <div id="cantidadDestino">
+       
+      </div>
+
+    </div>
+      
+      
+                       
+
+    
+  
+  <footer>
+    <div>
+      derechos reservados 2022
+    </div>
+  </footer>
+                       
+
+                
+                
+                      
+                
+            
+              
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="./constructores.js"></script>
+  <script type="text/javascript" src="./API.js"></script>
+  <script type="text/javascript" src="./calculadora.js"></script>
+  <script type="text/javascript" src="./grafica.js"></script>
+</body>
+</html>
