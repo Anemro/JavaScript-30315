@@ -1,13 +1,15 @@
 const ctx = document.getElementById('resultado').getContext('2d');
 
-function graficar () {
-    
+function graficar () {   
+
+
     const myChart = new Chart(ctx, {    
         
         type: 'bar',
         data: {
             labels: ['Inicio', 'Ganancia','Final'],
-            datasets: [{
+            datasets: 
+            [{
                 label: 'Ganancia',
                 data: [calculoInteresCompuesto[0].capitalI,calculoInteresCompuesto[0].ganancia, calculoInteresCompuesto[0].capitalFinal],
                 backgroundColor: [
@@ -37,16 +39,18 @@ function graficar () {
         }
     }
     });
+
+
+    let canvas = document.getElementsByClassName ('headCanvas');
+    
+    setTimeout (()=> {
+        for (i=0; i<localStorage.length; i++){
+            const h4 = document.createElement('h4');
+            const headCanvas = localStorage.getItem(localStorage.key(0));
+            h4.innerHTML = headCanvas
+            canvas[0].appendChild (h4);
+            
+            }
+        }, 1000)
 }
 
-
-let canvas = document.getElementsByClassName ('headCanvas');
-
-setTimeout (()=> {
-    for (i=0; i<localStorage.length; i++){
-        const h4 = document.createElement('h4');
-        const headCanvas = localStorage.getItem(localStorage.key(0));
-        h4.innerHTML = headCanvas
-        canvas[0].appendChild (h4);
-        }
-    }, 2000)

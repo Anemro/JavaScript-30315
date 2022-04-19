@@ -24,8 +24,17 @@ function resetResult() {
 
 
 boton.addEventListener ('click', (evento) => {
-    
-    evento.preventDefault()
+
+    if (frecuencia0.value == ''|| capital.value == '' || interes0.value == '' || anual0.value == '') {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Alguno de los campos necesarios estan vacios',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } else {
+        evento.preventDefault()
     
     let aporte= sumaAporte.value    
     let capitalInicial= capital.value
@@ -62,7 +71,6 @@ boton.addEventListener ('click', (evento) => {
             diferenciaTabla.innerHTML = `$${calculoInteresCompuesto[0].ganancia}`
             capitalFinalTabla.innerHTML = `$${calculoInteresCompuesto[0].capitalFinal}`
             
-            
             table.appendChild (anualTabla)
             table.appendChild (capitalInicialTabla)
             table.appendChild (aporteTabla)
@@ -72,7 +80,8 @@ boton.addEventListener ('click', (evento) => {
             table.appendChild (capitalFinalTabla)
             
          })
-         graficar();
+         
+         graficar()
      }
       else {   
          
@@ -85,14 +94,14 @@ boton.addEventListener ('click', (evento) => {
         calculoInteresCompuesto.forEach( ()=>{
 
             acumuloAporte=producto(frecuencia,aporte);
-            anualTabla = document.createElement('td')
-            capitalInicialTabla = document.createElement('td')
-            interesTabla = document.createElement('td')
-            frecuenciaTabla = document.createElement('td')
-            aporteTabla = document.createElement('td')
-            aporteAcumuladoTabla = document.createElement('td')
-            diferenciaTabla = document.createElement('td')
-            capitalFinalTabla = document.createElement('td')
+            anualTabla = document.createElement('th')
+            capitalInicialTabla = document.createElement('th')
+            interesTabla = document.createElement('th')
+            frecuenciaTabla = document.createElement('th')
+            aporteTabla = document.createElement('th')
+            aporteAcumuladoTabla = document.createElement('th')
+            diferenciaTabla = document.createElement('th')
+            capitalFinalTabla = document.createElement('th')
             anualTabla.innerHTML = calculoInteresCompuesto[0].anual
             capitalInicialTabla.innerHTML = `$${calculoInteresCompuesto[0].capitalI}`
             interesTabla.innerHTML = `${calculoInteresCompuesto[0].interes}%`
@@ -115,7 +124,10 @@ boton.addEventListener ('click', (evento) => {
 
           
              console.log("false")
-             graficar();
+             graficar()
+    }
+    
+    
          } 
          let person = document.getElementsByClassName ('name');
          let usuario = person[0].value

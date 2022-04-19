@@ -13,26 +13,26 @@ body{
   justify-content:center;
   gap: 10px;
 }
-.alert{
+.alertInfo{
   text-decoration: none;
   color: #fff;  
 }
-.alert .box{
+.alertInfo .box{
   background-color: black;
   opacity: 0.7;
   display: none;
 }
-.alert:hover{
+.alertInfo:hover{
   display: block;
 
 }
-.icon .alert img{
+.icon .alertInfo img{
   display: inline-block;
   max-width: 16px;
   max-height: 20px
 }
-p {
-  margin-top: 1rem;
+.parrafo {
+  margin-top: 10px;
   margin-bottom: 0px;
 }
 fieldset {
@@ -41,12 +41,19 @@ fieldset {
   margin: 0;
   border: 0;
 }
-.table {
-  border: solid 1px white;
-  max-width: 380px;
+.table__information{
+  max-width: 470px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tableCanvas {
   display: inline-block;
   text-align: center;
   font-size: 12px;
+  color: white;
 }
 
 .flex__cv {
@@ -73,7 +80,7 @@ fieldset {
 .flex__cv img {
   max-width: 480px;
   width: 100%;
-  margin-top: 1.25rem;
+  margin-top: 0.75rem;
 }
 
 .form-box {
@@ -87,13 +94,18 @@ fieldset {
   text-align: center;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 input[type="number"]
 {
 -webkit-appearance: textfield !important;
 margin: 0;
 -moz-appearance:textfield !important;
 }
-.form-box input, .form-box input, .form-box #boton-calcular, .form-box input, .form-box input {
+.form-box input, .form-box input, .form-box #boton-calcular, .form-box input, .form-box input, #cantidadOrigen{
   border: 0;
   background: none;
   display: block;
@@ -109,12 +121,12 @@ margin: 0;
   transition: 0.25s;
 }
 
-.form-box input[type="text"]:focus, .form-box input[type="number"]:focus {
+.form-box input[type="text"]:focus, .form-box input[type="number"]:focus #cantidadOrigen:focus{
   width: 350px;
   border-color: #ffffff;
 }
 
-.form-box #boton-calcular{
+.form-box #boton-calcular, #botonCambio, #limpiarTabla {
   border: 0;
   background: #5352ed;
   display: block;
@@ -135,17 +147,21 @@ margin: 0;
 }
 
 .fa {
-  width: 1px;
-  border-radius: solid 2px;
-  color: #fff;
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  color: white;
 }
 .title {
   border: #fff solid 1px;
 }
 #resultado{
-  border: #fff solid 1px;
   padding: 1px;
 }
-
-
+.convert{
+  max-width: 250px;
+}
+#cantidadOrigen{
+  max-width: 200px;
+}
 

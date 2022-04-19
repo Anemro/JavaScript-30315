@@ -34,22 +34,25 @@ async function getCripto(callBack){
     callBack(dataCripto)
 }
 function calcularCambio(calculo) {
-
-    moneda= divisaDestino.value.toUpperCase()
-    cambiar= cantidadOrigen.value
-    destino= cripto[0].ask
-    resultadoCambio= cambiar/destino
-    tituloTabla = document.createElement('thead')
-    resultadoTabla = document.createElement('td')
-    tituloTabla.innerHTML='change for'
-    resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)} ${moneda}`
-    cantidadDestino.appendChild(tituloTabla)
-    cantidadDestino.appendChild(resultadoTabla)
-
+        
+        moneda= divisaDestino.value.toUpperCase()
+        cambiar= cantidadOrigen.value
+        destino= cripto[0].ask
+        resultadoCambio= cambiar/destino
+        tituloTabla=document.createElement('thead')
+        resultadoTabla = document.createElement('td')
+        tituloTabla.innerHTML='Change for'
+        resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)} ${moneda}`
+        cantidadDestino.classList.add ('tableCanvas')
+        cantidadDestino.appendChild(tituloTabla)
+        cantidadDestino.appendChild(resultadoTabla)
 }
+
 botonCambio.addEventListener('click', (evento)=>{
     evento.preventDefault();
-    getDolar()
+
+    
+    getDolar(calcularCambio);
     getCripto(calcularCambio); 
     Swal.fire({
         position: 'top-end',
@@ -60,7 +63,7 @@ botonCambio.addEventListener('click', (evento)=>{
       })
 })
 
-botonLimpiarTabla.addEventListener('click', (evento)=>{
+botonLimpiarTabla.addEventListener('click', ()=>{
     limpiarTabla();
     Swal.fire({
         position: 'top-end',
