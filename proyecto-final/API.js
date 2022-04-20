@@ -21,6 +21,7 @@ async function getDolar(callBack){
     const res= await fetch(URL_DOLAR)
     const dolares= await res.json()
     dolar.push(dolares)
+    callBack(dolares)
 }
 
 async function getCripto(callBack){
@@ -33,8 +34,36 @@ async function getCripto(callBack){
     cripto.push(dataCripto)
     callBack(dataCripto)
 }
-function calcularCambio(calculo) {
-        
+          
+    
+
+function calcularCambio() {
+    if (divisaDestino.value == 'usd' && divisaOrigen.value == 'ars' || divisaDestino.value == 'ars' && divisaOrigen.value == 'usd' ) {
+        moneda= divisaDestino.value.toUpperCase()
+        cambiar= cantidadOrigen.value
+        destino= dolar[0].mep
+        if(divisaDestino.value == 'usd'){
+            resultadoCambio= cambiar/destino
+            tituloTabla=document.createElement('thead')
+            resultadoTabla = document.createElement('td')
+            tituloTabla.innerHTML='Change for'
+            resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)} ${moneda}`
+            cantidadDestino.classList.add ('tableCanvas')
+            cantidadDestino.appendChild(tituloTabla)
+            cantidadDestino.appendChild(resultadoTabla)
+            console.log('Destino Dolar')
+        }else{
+            resultadoCambio= destino*cambiar
+            tituloTabla=document.createElement('thead')
+            resultadoTabla = document.createElement('td')
+            tituloTabla.innerHTML='Change for'
+            resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)} ${moneda}`
+            cantidadDestino.classList.add ('tableCanvas')
+            cantidadDestino.appendChild(tituloTabla)
+            cantidadDestino.appendChild(resultadoTabla)
+            console.log('Destino Peso')
+        }
+    } else {
         moneda= divisaDestino.value.toUpperCase()
         cambiar= cantidadOrigen.value
         destino= cripto[0].ask
@@ -46,14 +75,16 @@ function calcularCambio(calculo) {
         cantidadDestino.classList.add ('tableCanvas')
         cantidadDestino.appendChild(tituloTabla)
         cantidadDestino.appendChild(resultadoTabla)
+    }
 }
 
 botonCambio.addEventListener('click', (evento)=>{
     evento.preventDefault();
-
-    
-    getDolar(calcularCambio);
-    getCripto(calcularCambio); 
+    if (divisaDestino.value == 'usd' && divisaOrigen.value == 'ars' || divisaDestino.value == 'ars' && divisaOrigen.value == 'usd'){
+        getDolar(calcularCambio);
+    }else{
+        getCripto(calcularCambio); 
+    }
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -73,6 +104,11 @@ botonLimpiarTabla.addEventListener('click', ()=>{
         timer: 1000
       })
 })
+    
+   
+        
+   
+    
 
 
 
