@@ -54,16 +54,16 @@ let canvas = document.getElementById ('headCanvas');
 setTimeout (()=> {
     
     if (contador>0){
-        true
-    }else{
-        for (i=0; i<localStorage.length; i++){
-            contador++
-            const h4 = document.createElement('h4');
-            const headCanvas = localStorage.getItem(localStorage.key(0));
-            h4.innerHTML = headCanvas
-            canvas.appendChild (h4);
-        }
+        resetHeadCanvas()
     }
+    for (i=0; i<localStorage.length; i++){
+        contador++
+        const h4 = document.createElement('h4');
+        const headCanvas = localStorage.getItem(localStorage.key(0));
+        h4.innerHTML = headCanvas
+        canvas.appendChild (h4);
+    }
+    
 }, 500)
 }
 
