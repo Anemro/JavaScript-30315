@@ -43,40 +43,69 @@ function calcularCambio() {
         cambiar= cantidadOrigen.value
         destino= dolar[0].mep
         if(divisaDestino.value == 'usd'){
-            resultadoCambio= cambiar/destino
-            tituloTabla=document.createElement('thead')
-            resultadoTabla = document.createElement('td')
-            tituloTabla.innerHTML='Change for'
-            resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)} ${moneda}`
-            cantidadDestino.classList.add ('tableCanvas')
-            cantidadDestino.appendChild(tituloTabla)
+            resultadoCambio= cambiar/destino            
+            cantidadCambiar = document.createElement('th')
+            cantidadCambiar.innerHTML= cambiar
+            monedaOrigen = document.createElement('th')
+            monedaOrigen.innerHTML = divisaOrigen.value.toUpperCase()
+            change = document.createElement('th')
+            change.innerHTML = 'SWAP'
+            resultadoTabla = document.createElement('th')
+            resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)}`
+            monedaDestino = document.createElement('th')
+            monedaDestino.innerHTML=`${moneda}`  
+            
+            cantidadDestino.appendChild(cantidadCambiar)
+            cantidadDestino.appendChild(monedaOrigen)
+            cantidadDestino.appendChild(change)
+            cantidadDestino.appendChild(monedaDestino)
             cantidadDestino.appendChild(resultadoTabla)
-            console.log('Destino Dolar')
+            
         }else{
-            resultadoCambio= destino*cambiar
-            tituloTabla=document.createElement('thead')
-            resultadoTabla = document.createElement('td')
-            tituloTabla.innerHTML='Change for'
-            resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)} ${moneda}`
-            cantidadDestino.classList.add ('tableCanvas')
-            cantidadDestino.appendChild(tituloTabla)
+            resultadoCambio= destino*cambiar            
+            cantidadCambiar = document.createElement('th')
+            cantidadCambiar.innerHTML= cambiar
+            monedaOrigen = document.createElement('th')
+            monedaOrigen.innerHTML = divisaOrigen.value.toUpperCase()
+            change = document.createElement('th')
+            change.innerHTML = 'SWAP'
+            resultadoTabla = document.createElement('th')
+            resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)}`
+            monedaDestino = document.createElement('th')
+            monedaDestino.innerHTML=`${moneda}`  
+            
+            cantidadDestino.appendChild(cantidadCambiar)
+            cantidadDestino.appendChild(monedaOrigen)
+            cantidadDestino.appendChild(change)
+            cantidadDestino.appendChild(monedaDestino)
             cantidadDestino.appendChild(resultadoTabla)
-            console.log('Destino Peso')
         }
+            
     } else {
         moneda= divisaDestino.value.toUpperCase()
         cambiar= cantidadOrigen.value
         destino= cripto[0].ask
         resultadoCambio= cambiar/destino
-        tituloTabla=document.createElement('thead')
-        resultadoTabla = document.createElement('td')
-        tituloTabla.innerHTML='Change for'
-        resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)} ${moneda}`
-        cantidadDestino.classList.add ('tableCanvas')
-        cantidadDestino.appendChild(tituloTabla)
+        cantidadCambiar = document.createElement('th')
+        cantidadCambiar.innerHTML= cambiar
+        monedaOrigen = document.createElement('th')
+        monedaOrigen.innerHTML = divisaOrigen.value.toUpperCase()
+        change = document.createElement('th')
+        change.innerHTML = 'SWAP'
+        resultadoTabla = document.createElement('th')
+        resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)}`
+        monedaDestino = document.createElement('th')
+        monedaDestino.innerHTML=`${moneda}`  
+        
+        cantidadDestino.appendChild(cantidadCambiar)
+        cantidadDestino.appendChild(monedaOrigen)
+        cantidadDestino.appendChild(change)
+        cantidadDestino.appendChild(monedaDestino)
         cantidadDestino.appendChild(resultadoTabla)
     }
 }
+        
+        
 
 botonCambio.addEventListener('click', (evento)=>{
     evento.preventDefault();
