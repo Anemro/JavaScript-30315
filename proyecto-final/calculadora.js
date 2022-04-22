@@ -4,7 +4,7 @@ const producto = (a,b) => a * b //donde a es el capital inicial y b el resultado
 const basePotencia = (r)=> 1 + (r/100) //donde r es el interes mensual
 const calcInteres =(b,e)=> Math.pow(b,e)//donde b es la base y e el exponente resultante del producto frecuencia y anual
 
-let calculoInteresCompuesto = [];
+let calculoInteresCompuesto = [{capitalI: 0}]
 const boton = document.getElementById('boton-calcular');
 const capital = document.getElementById('capitalInicial');
 const interes0 = document.getElementById('interes');
@@ -17,9 +17,11 @@ const table = document.getElementById ('result');
 function resetResult() {
     calculoInteresCompuesto.length = 0;
     let element = document.getElementById("result");
+    
     while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
+        element.removeChild(element.firstChild);    
+          
+    }    
 };
 
 boton.addEventListener ('click', (evento) => {
