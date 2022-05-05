@@ -102,6 +102,8 @@ botonLimpiarTabla.addEventListener('click', ()=>{
         timer: 1000
       })
 })
+
+
     
    
         

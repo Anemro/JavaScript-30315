@@ -1,12 +1,14 @@
 class interesCompuesto {
-    constructor (capitalI,interes,anual,frecuencia,capitalFinal,ganancia,aporte) {
-            this.capitalI = capitalI;
-            this.interes = interes;
-            this.anual = anual;
-            this.frecuencia = frecuencia;
-            this.capitalFinal = capitalFinal;    
-            this.ganancia = ganancia;
-            this.aporte = aporte;
-        }
+    constructor (anual,capitalI,aporte,acumuloAportes,interes,frecuencia,ganancia,capitalFinal) {
+        this.anual = anual;
+        this.capitalI = capitalI;
+        this.aporte = aporte;
+        this.acumuloAportes = acumuloAportes
+        this.interes = interes;
+        this.frecuencia = frecuencia;
+        this.ganancia = ganancia;
+        this.capitalFinal = capitalFinal;    
+    }
+        
             
 }

@@ -13,7 +13,6 @@ const sumaAporte= document.getElementById("regular")
 const anual0 = document.getElementById('anual');
 const table = document.getElementById ('result');
 
-
 function resetResult() {
     calculoInteresCompuesto.length = 0;
     let element = document.getElementById("result");
@@ -32,7 +31,7 @@ boton.addEventListener ('click', (evento) => {
             icon: 'error',
             title: 'Alguno de los campos necesarios estan vacios',
             showConfirmButton: false,
-            timer: 1500
+            timer: 2000
           })
     } else {
         let capitalInicial= capital.value
@@ -49,86 +48,54 @@ boton.addEventListener ('click', (evento) => {
            let result = producto(capitalInicial,calcInteres(basePotencia(interes),producto(frecuencia,anual)));
            let capitalFinal = result.toFixed(2)
            let diferencia = parseInt(capitalFinal - capitalInicial)
-            calculoInteresCompuesto.push (new interesCompuesto (capitalInicial,interes,anual,frecuencia,capitalFinal,diferencia,'0'));
-      
-      
-      calculoInteresCompuesto.forEach( ()=>{
-        acumuloAporte=producto(frecuencia,aporte);
-        anualTabla = document.createElement('th')
-        capitalInicialTabla = document.createElement('th')
-        interesTabla = document.createElement('th')
-        frecuenciaTabla = document.createElement('th')
-        aporteTabla = document.createElement('th')
-        aporteAcumuladoTabla = document.createElement('th')
-        diferenciaTabla = document.createElement('th')
-        capitalFinalTabla = document.createElement('th')
-        anualTabla.innerHTML = calculoInteresCompuesto[0].anual
-        capitalInicialTabla.innerHTML = `$${calculoInteresCompuesto[0].capitalI}`
-        interesTabla.innerHTML = `${calculoInteresCompuesto[0].interes}%`
-        frecuenciaTabla.innerHTML = calculoInteresCompuesto[0].frecuencia
-        aporteTabla.innerHTML = `$${calculoInteresCompuesto[0].aporte}`
-        aporteAcumuladoTabla.innerHTML = `$${acumuloAporte}`
-        diferenciaTabla.innerHTML = `$${calculoInteresCompuesto[0].ganancia}`
-        capitalFinalTabla.innerHTML = `$${calculoInteresCompuesto[0].capitalFinal}`
-        
-        
-        table.appendChild (anualTabla)
-        table.appendChild (capitalInicialTabla)
-        table.appendChild (aporteTabla)
-        table.appendChild (aporteAcumuladoTabla)
-        table.appendChild (interesTabla)            
-        table.appendChild (diferenciaTabla)
-        table.appendChild (capitalFinalTabla)
-    })
+            calculoInteresCompuesto.push (new interesCompuesto (anual,capitalInicial,'0','0',interes,frecuencia,diferencia,capitalFinal));
+            calculoInteresCompuesto.forEach( ()=>{
+                   
+                acumuloAporte=producto(frecuencia,aporte);
+                for (let i = 0; i < calculoInteresCompuesto.length; i++) {
+                    const element = calculoInteresCompuesto[i];
+                    console.log(element)
+                    for (let key in element) {
+                        let fila = document.createElement('th')
+                        fila.innerHTML = `${element[key]}`
+                        table.appendChild(fila)                              
+                    }
+                    
+                }
+               
+            })   
             graficar()
-            
         }
         else {   
-           
-          let result= producto(capitalInicial,calcInteres(basePotencia(interes),producto(frecuencia,anual)));
-          let resultAporte= producto(aporte,calcInteres(basePotencia(interes),producto(frecuencia,anual)-1))/(interes/100);
-          let capitalFinal= parseInt((result+resultAporte).toFixed(2));
-          let diferencia= parseInt(capitalFinal-capitalInicial);
-          calculoInteresCompuesto.push (new interesCompuesto (capitalInicial,interes,anual,frecuencia,capitalFinal,diferencia,aporte));
-
-          calculoInteresCompuesto.forEach( ()=>{
-            acumuloAporte=producto(frecuencia,aporte);
-            anualTabla = document.createElement('th')
-            capitalInicialTabla = document.createElement('th')
-            interesTabla = document.createElement('th')
-            frecuenciaTabla = document.createElement('th')
-            aporteTabla = document.createElement('th')
-            aporteAcumuladoTabla = document.createElement('th')
-            diferenciaTabla = document.createElement('th')
-            capitalFinalTabla = document.createElement('th')
-            anualTabla.innerHTML = calculoInteresCompuesto[0].anual
-            capitalInicialTabla.innerHTML = `$${calculoInteresCompuesto[0].capitalI}`
-            interesTabla.innerHTML = `${calculoInteresCompuesto[0].interes}%`
-            frecuenciaTabla.innerHTML = calculoInteresCompuesto[0].frecuencia
-            aporteTabla.innerHTML = `$${calculoInteresCompuesto[0].aporte}`
-            aporteAcumuladoTabla.innerHTML = `$${acumuloAporte}`
-            diferenciaTabla.innerHTML = `$${calculoInteresCompuesto[0].ganancia}`
-            capitalFinalTabla.innerHTML = `$${calculoInteresCompuesto[0].capitalFinal}`
-            
-            
-            table.appendChild (anualTabla)
-            table.appendChild (capitalInicialTabla)
-            table.appendChild (aporteTabla)
-            table.appendChild (aporteAcumuladoTabla)
-            table.appendChild (interesTabla)            
-            table.appendChild (diferenciaTabla)
-            table.appendChild (capitalFinalTabla)
-        })
-  
-          
-          console.log("false")
-          graficar()
-  }
-} 
-let person = document.getElementsByClassName ('name');
-let usuario = person[0].value
-localStorage.setItem('nombre',`Este es tu resultado ${usuario}`)
+            let result= producto(capitalInicial,calcInteres(basePotencia(interes),producto(frecuencia,anual)));
+            let resultAporte= producto(aporte,calcInteres(basePotencia(interes),producto(frecuencia,anual)-1))/(interes/100);
+            let capitalFinal= parseInt((result+resultAporte).toFixed(2));
+            let diferencia= parseInt(capitalFinal-capitalInicial);
+            let acumuloAporte=producto(frecuencia,aporte);
+            calculoInteresCompuesto.push (new interesCompuesto (anual,capitalInicial,aporte,acumuloAporte,interes,frecuencia,diferencia,capitalFinal));
+            calculoInteresCompuesto.forEach( ()=>{
+                   
+                acumuloAporte=producto(frecuencia,aporte);
+                for (let i = 0; i < calculoInteresCompuesto.length; i++) {
+                    const element = calculoInteresCompuesto[i];
+                    console.log(element)
+                    for (let key in element) {
+                        let fila = document.createElement('th')
+                        fila.innerHTML = `${element[key]}`
+                        table.appendChild(fila)                              
+                    }
+                    
+                }
+               
+            })
+            graficar()
+        }
+    } 
+    let person = document.getElementsByClassName ('name');
+    let usuario = person[0].value
+    localStorage.setItem('nombre',`Este es tu resultado ${usuario}`)
 })
+      
   
 
     

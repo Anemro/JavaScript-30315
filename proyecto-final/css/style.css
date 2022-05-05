@@ -42,7 +42,7 @@ fieldset {
   border: 0;
 }
 .table__information{
-  max-width: 470px;
+  max-width: 580px;
   width: 100%;
   display: flex;
   flex-direction: column;
