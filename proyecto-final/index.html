@@ -29,7 +29,7 @@
             <input class="name" type="text" placeholder="INGRESA TU NOMBRE">
           </div>
           <div class="titleInput">
-            <p class="parrafo">Cantidad Inicial</p>
+            <p class="parrafo">Cantidad inicial</p>
             <div class="icon">
               <a class="alertInfo" href="#">
                 <img  src="./icons/Question.png" alt="inversión">
@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="input">
-            <input  type="number" id="capitalInicial" placeholder="PASO 1">
+            <input  type="number" id="capitalInicial" placeholder="Ejemplo: 10000">
           </div>        
           <div class="titleInput">
             <p class="parrafo">Interes devengado</p>
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div>
-            <input id="interes"  type="number" placeholder="PASO 2">
+            <input id="interes"  type="number" placeholder="Expresado en decimal Ej: 5">
           </div>
           <div class="titleInput">
             <p class="parrafo">Frecuencia de Pago</p>
@@ -68,7 +68,7 @@
             </div>
           </div>
           <div>
-            <input id="frecuencia" type="number"  placeholder="PASO 3">
+            <input id="frecuencia" type="number"  placeholder="Expresado en veces de pago Ej: 12">
           </div>
           <div class="titleInput">
             <p class="parrafo">Aporte regular</p>
@@ -82,7 +82,7 @@
             </div>
           </div>
           <div>
-            <input id="regular" type="number" placeholder="PASO OPCIONAL" >
+            <input id="regular" type="number" placeholder="PASO OPCIONAL (adición de dinero)" >
           </div>
           <div class="titleInput">
             <p class="parrafo">Numero de años</p>
@@ -96,10 +96,10 @@
             </div>
           </div>  
           <div>            
-            <input id="anual" type="number" placeholder="PASO 4">
+            <input id="anual" type="number" placeholder="Ejemplo: 2">
           </div>
           <div class="form-box">
-            <button id="boton-calcular">Calcular/Graficar</button>                     
+            <button id="boton-calcular">Calcular y graficar</button>                     
           </div>
           
         </div>
@@ -140,32 +140,35 @@
       
 
     <div class="convert">
-      <div class="q">
-        <h4>Cantidad</h4>
-        <input id="cantidadOrigen" type="number">
+      <div class="displayCambio">
+        
+        <div class="q">
+          <input id="cantidadOrigen" type="number" placeholder="CANTIDAD">
+        </div>
+          
+        <div class="divisa">
+          <select name="moneda" id="divisaOrigen" class="form-select form-select-sm mt-1" aria-label=".form-select-sm example">
+            <!-- <option>ada</option> -->
+            <option value="ars">ARS - Peso Argentino</option>
+            <!-- <option>bch</option> -->
+            <!-- <option>btc</option> -->
+            <option value="clp">CLP - Peso Chileno</option>
+            <!-- <option>dai</option> -->
+            <!-- <option>eth</option> -->
+            <!-- <option>ltc</option> -->
+            <option value="mxn">MXN - Peso Mexicano</option>
+            <option value="pen">PEN - Sol Peruano</option>
+            <!-- <option>sol</option> -->
+            <option value="usd">USD - Dolar Estados Unidos</option>
+            <!-- <option>usdc</option> -->
+            <!-- <option>xlm</option> -->
+            <!-- <option>xrp</option> -->
+          </select>
+        </div>
       </div>
+
       <div class="divisa">
-        <select name="moneda" id="divisaOrigen" class="form-select form-select-sm mt-1" aria-label=".form-select-sm example">
-          <!-- <option>ada</option> -->
-          <option value="ars">ARS - Peso Argentino</option>
-          <!-- <option>bch</option> -->
-          <!-- <option>btc</option> -->
-          <option value="clp">CLP - Peso Chileno</option>
-          <!-- <option>dai</option> -->
-          <!-- <option>eth</option> -->
-          <!-- <option>ltc</option> -->
-          <option value="mxn">MXN - Peso Mexicano</option>
-          <option value="pen">PEN - Sol Peruano</option>
-          <!-- <option>sol</option> -->
-          <option value="usd">USD - Dolar Estados Unidos</option>
-          <!-- <option>usdc</option> -->
-          <!-- <option>xlm</option> -->
-          <!-- <option>xrp</option> -->
-        </select>
-      </div>
-      <button id="botonCambio" type="submit">Cambiar a</button>
-      <div class="divisa">
-        <select name="moneda" id="divisaDestino" class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <span>A</span><select name="moneda" id="divisaDestino" class="form-select form-select-sm" aria-label=".form-select-sm example">
           <option value="ada">ADA - Cardano</option>
           <option value="ars">ARS - Peso Argentino</option>
           <option value="bch">BCH - BitcoinCash</option>
@@ -184,11 +187,11 @@
         </select>
       </div>
       <div>
-        <button id="limpiarTabla">Limpiar Tabla</button>
+        <button id="botonCambio" type="submit">Cambiar</button>
       </div>
       <div>
         <table class="tableCanvas table table-dark table-striped">
-         
+          
           <thead>
             <tr>
               <th scope="col">Cantidad</th>
@@ -198,18 +201,16 @@
               <th scope="col">Divisa Destino</th>
             </tr>
           </thead>
-          <tbody>
-            <tr  id="cantidadDestino">
-              
-            </tr>
-                          
+          <tbody id="cantidadDestino">
+            
           </tbody>
         </table>
+        <button id="limpiarTabla">Limpiar Tabla</button>
       </div>
     </div>
   </div>
 </div>
-              
+
 
 <div class="container">
   <footer class="py-3 my-4">

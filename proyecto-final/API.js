@@ -9,6 +9,7 @@ const cantidadDestino= document.getElementById('cantidadDestino')
 const botonCambio= document.getElementById('botonCambio')
 const botonLimpiarTabla= document.getElementById('limpiarTabla')
 
+
 function limpiarTabla() {
     while (cantidadDestino.firstChild) {
         cantidadDestino.removeChild(cantidadDestino.firstChild);
@@ -36,6 +37,17 @@ async function getCripto(callBack){
 }
           
     
+const constructorTabla = () => { for (let i = 0; i < 1; i++) {
+    let filaTabla = document.createElement ('tr');
+    for (let j = 0; j < 5; j++) {
+        const contenido = [cambiar,divisaOrigen.value.toUpperCase(),'SWAP',`${resultadoCambio.toFixed(5)}`,`${moneda}`]
+        let celda = document.createElement('th');
+        let textoCelda = document.createTextNode(contenido[+j]);
+        celda.appendChild(textoCelda);
+        filaTabla.appendChild(celda);
+    }
+     cantidadDestino.appendChild(filaTabla)           
+}}
 
 function calcularCambio() {
     if (divisaDestino.value == 'usd' && divisaOrigen.value == 'ars' || divisaDestino.value == 'ars' && divisaOrigen.value == 'usd' ) {
@@ -44,41 +56,11 @@ function calcularCambio() {
         destino= dolar[0].mep
         if(divisaDestino.value == 'usd'){
             resultadoCambio= cambiar/destino            
-            cantidadCambiar = document.createElement('th')
-            cantidadCambiar.innerHTML= cambiar
-            monedaOrigen = document.createElement('th')
-            monedaOrigen.innerHTML = divisaOrigen.value.toUpperCase()
-            change = document.createElement('th')
-            change.innerHTML = 'SWAP'
-            resultadoTabla = document.createElement('th')
-            resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)}`
-            monedaDestino = document.createElement('th')
-            monedaDestino.innerHTML=`${moneda}`  
-            
-            cantidadDestino.appendChild(cantidadCambiar)
-            cantidadDestino.appendChild(monedaOrigen)
-            cantidadDestino.appendChild(change)
-            cantidadDestino.appendChild(monedaDestino)
-            cantidadDestino.appendChild(resultadoTabla)
+            constructorTabla()
             
         }else{
             resultadoCambio= destino*cambiar            
-            cantidadCambiar = document.createElement('th')
-            cantidadCambiar.innerHTML= cambiar
-            monedaOrigen = document.createElement('th')
-            monedaOrigen.innerHTML = divisaOrigen.value.toUpperCase()
-            change = document.createElement('th')
-            change.innerHTML = 'SWAP'
-            resultadoTabla = document.createElement('th')
-            resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)}`
-            monedaDestino = document.createElement('th')
-            monedaDestino.innerHTML=`${moneda}`  
-            
-            cantidadDestino.appendChild(cantidadCambiar)
-            cantidadDestino.appendChild(monedaOrigen)
-            cantidadDestino.appendChild(change)
-            cantidadDestino.appendChild(monedaDestino)
-            cantidadDestino.appendChild(resultadoTabla)
+            constructorTabla()
         }
             
     } else {
@@ -86,24 +68,11 @@ function calcularCambio() {
         cambiar= cantidadOrigen.value
         destino= cripto[0].ask
         resultadoCambio= cambiar/destino
-        cantidadCambiar = document.createElement('th')
-        cantidadCambiar.innerHTML= cambiar
-        monedaOrigen = document.createElement('th')
-        monedaOrigen.innerHTML = divisaOrigen.value.toUpperCase()
-        change = document.createElement('th')
-        change.innerHTML = 'SWAP'
-        resultadoTabla = document.createElement('th')
-        resultadoTabla.innerHTML= `${resultadoCambio.toFixed(5)}`
-        monedaDestino = document.createElement('th')
-        monedaDestino.innerHTML=`${moneda}`  
-        
-        cantidadDestino.appendChild(cantidadCambiar)
-        cantidadDestino.appendChild(monedaOrigen)
-        cantidadDestino.appendChild(change)
-        cantidadDestino.appendChild(monedaDestino)
-        cantidadDestino.appendChild(resultadoTabla)
+        constructorTabla()
     }
 }
+             
+        
         
         
 
